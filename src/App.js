@@ -4,16 +4,18 @@ import { Suspense, lazy } from 'react'
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 import './styles.css'
 
+const Homepage = lazy(() => import('./pages/Homepage'))
+const Login = lazy(() => import('./pages/Login'))
+
 function App() {
 	return (
 		<div className='App'>
 			<Router>
 				<Suspense fallback={<h1>Loading...</h1>}>
-					{/* <Switch>
-					<Route component={Homepage} path='/' exact />
-					<Route component={Roompage} path='/rooms' exact />
-				</Switch> */}
-					Hello World
+					<Switch>
+						<Route component={Homepage} path='/' exact />
+						<Route component={Login} path='/login' exact />
+					</Switch>
 					<ToastContainer
 						position='top-right'
 						autoClose={5000}
