@@ -6,6 +6,7 @@ import './styles.css'
 
 const Homepage = lazy(() => import('./pages/Homepage'))
 const Login = lazy(() => import('./pages/Login'))
+const ListAccomadation = lazy(() => import('./pages/ListAccomadation'))
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 					<Switch>
 						<Route component={Homepage} path='/' exact />
 						<Route component={Login} path='/login' exact />
+						<Route component={ListAccomadation} path='/all-accomadations' exact />
 					</Switch>
 					<ToastContainer
 						position='top-right'
