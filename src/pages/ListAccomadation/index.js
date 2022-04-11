@@ -5,6 +5,38 @@ import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import { AccomadationCard } from '../../components/AccomadationCard'
+import { Link } from 'react-router-dom'
+import Hotel1 from '../../assets/hotels/hotel_room.png'
+import Hotel2 from '../../assets/hotels/hotel_room_2.png'
+import Hotel3 from '../../assets/hotels/hotel_room_3.png'
+
+const mock = [
+	{
+		id: 1,
+		type: 'Classic Room',
+		image: Hotel1,
+		property: '25m / No specific view / 2 Adults',
+		description:
+			'The dark wood panelling and elegant furnishings evoke the charm of a secluded Sierra Nevada getaway.',
+	},
+	{
+		id: 2,
+		type: 'Superior Room',
+		image: Hotel2,
+		property: '25m / Partial Mountain View / 2 Adults, 1 Children ',
+		description:
+			'The superior double rooms offer a cosy, rustic atmosphere, and are the ultimate setting to escape from the stresses of daily life.',
+	},
+	{
+		id: 3,
+		type: 'Deluxe Room',
+		image: Hotel3,
+		property: '28 - 36m/ Mountain View/ 2 Adults ',
+		description:
+			'Each impressive deluxe room is inspired by a different mountain region of the world, from the Swiss Alps to Mount Kilimanjaro.',
+	},
+]
 
 const ListAccomadation = () => {
 	return (
@@ -13,9 +45,13 @@ const ListAccomadation = () => {
 				<div className='tabs'>
 					<span className='brand'>MoviLa</span>
 					<TabList className='tab__list'>
-						<Tab className='tab'>Homepage</Tab>
-						<Tab className='tab'>Accomadations</Tab>
-						<Tab className='tab'>Users</Tab>
+						<Tab className='tab'>
+							<Link className='link' to='/'>
+								Homepage
+							</Link>
+						</Tab>
+						<Tab className='tab'>All Accomadations</Tab>
+						<Tab className='tab'>New Accomadation</Tab>
 					</TabList>
 					<div className='social'>
 						<div className='icon'>
@@ -34,25 +70,11 @@ const ListAccomadation = () => {
 				</div>
 
 				<div className='content'>
+					<TabPanel>Welcom back</TabPanel>
 					<TabPanel>
-						<div className='list__container'>
-							<span className='item'>Welcome back Admin!</span>
-						</div>
-					</TabPanel>
-					<TabPanel>
-						<div className='list__container'>
-							<span className='item'>All Accomadations</span>
-							<span className='item'>Add Accomadations</span>
-							<span className='item'>Edit Accomadation</span>
-							<span className='item'>Delete Accomadation</span>
-						</div>
-					</TabPanel>
-					<TabPanel>
-						<div className='list__container'>
-							<span className='item'>All Users</span>
-							<span className='item'>Edit User</span>
-							<span className='item'>Delete User</span>
-						</div>
+						{mock.map((item) => (
+							<AccomadationCard img={item.image} name={item.type} description={item.description} />
+						))}
 					</TabPanel>
 				</div>
 			</Tabs>

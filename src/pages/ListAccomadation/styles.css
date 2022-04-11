@@ -1,0 +1,81 @@
+.ListAccomadation{
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    font-family: Roboto, "Helvetica Neue";
+    width: 100vw;
+}
+.tab__container{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+.tabs{
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    height: 90vh;
+    justify-content: space-between;
+    border-right: 1px solid #333;
+}
+.brand{
+    font-size: 50px;
+    font-weight: bold;
+}
+.tab__list{
+    padding: 0;
+    margin: 0;
+}
+.tab{
+    text-decoration: none;
+    list-style: none;
+    color: #afafaf;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: all 0.3s
+}
+.tab:hover{
+    color: white;
+    transform: scale(1.1);
+}
+.social{
+    display: flex;
+    flex-direction: row;
+}
+.icon{
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.3s;
+}
+.icon:hover{
+    transform: scale(1.2);
+}
+.content{
+    width: 80%;
+    height: 100vh;
+    padding: 30px;
+    overflow-y: auto;
+
+}
+.images{
+    width: 40%;
+}
+.image{
+    height: 100vh;
+}
+
+.item{
+    font-size: 30px;
+    color: white;
+    text-transform: uppercase;
+    padding: 30px 0;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.item:hover{
+    transform: scale(1.1)
+}
