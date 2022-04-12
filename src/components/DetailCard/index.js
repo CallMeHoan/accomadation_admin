@@ -1,6 +1,9 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import './styles.css'
 import image1 from '../../assets/hotels/hotel_room.png'
+import { Link } from 'react-router-dom'
+import { useGetAccomadationById } from '../../queries/useAccomadation.queries'
 
 const mock = [
 	{
@@ -22,31 +25,41 @@ const mock = [
 ]
 
 const DetailAccomdation = () => {
+	const params = useParams()
+	const id = params.id
+	const { data } = useGetAccomadationById(id)
+	console.log(data)
 	return (
 		<div className='DetailAccomadation'>
 			<section className='info_container'>
-				<div className='info_name'>{mock[0].type}</div>
+				<div className='info_name'>{data?.data.type}</div>
 				<div className='info_pictiure'>
-					<img src={mock[0].image} alt='image' />
+					<img src={data?.data.image_Url} alt='image' />
 				</div>
-				<div className='info_title'>{mock[0].title}</div>
-				<div className='info_description'>{mock[0].description}</div>
+				<div className='info_title'>{data?.data.title}</div>
+				<div className='info_description'>{data?.data.description}</div>
 				<div className='info_details_book'>
 					<div className='info_details'>
 						<div className='all_details'>
-							<div className='detail'>Toilets :{mock[0].toilets}</div>
-							<div className='detail'>Wifi :{mock[0].wifi}</div>
-							<div className='detail'>Floor :{mock[0].floor}</div>
-							<div className='detail'>People :{mock[0].people}</div>
-							<div className='detail'>Area :{mock[0].area}</div>
-							<div className='detail'>Price :{mock[0].price}</div>
-							<div className='detail'>Available :{mock[0].available}</div>
+							<div className='detail'>Toilets :{data?.data.toilets}</div>
+							<div className='detail'>
+								Wifi :{data?.data.wifi ? <span>Available</span> : <span>Unavailable</span>}
+							</div>
+							<div className='detail'>Floor :{data?.data.floor}</div>
+							<div className='detail'>People :{data?.data.people}</div>
+							<div className='detail'>Area :{data?.data.area}</div>
+							<div className='detail'>Price :{data?.data.price}</div>
+							<div className='detail'>Available :{data?.data.available}</div>
 						</div>
 					</div>
 					<div className='book_now_container'>
 						<div className='book_price'>Edit this rooms or Return</div>
 						<div className='book_btn'>Edit</div>
-						<div className='book_btn'>All accomadations</div>
+						<div className='book_btn'>
+							<Link className='link' to='/all-accomadations'>
+								All Accomadations
+							</Link>
+						</div>
 					</div>
 				</div>
 				<div className='Gallary_place'>

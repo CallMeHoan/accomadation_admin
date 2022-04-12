@@ -42,21 +42,25 @@ const mock = [
 const ListAccomadation = () => {
 	const { data } = useGetAccomadation()
 	console.log(data)
+	// var accomadations = ''
+	// console.log(accomadations)
+	// if (data !== undefined) {
+	// 	accomadations = data.data
+	// 	console.log(accomadations)
+	// }
 	return (
 		<div className='ListAccomadation'>
 			<Tabs className='tab__container'>
 				<div className='tabs'>
 					<span className='brand'>MoviLa</span>
 					<TabList className='tab__list'>
+						<Tab className='tab'>All Accomadations</Tab>
+						<Tab className='tab'>
+							<Link className='link' to='/new-accomadation'></Link>
+						</Tab>
 						<Tab className='tab'>
 							<Link className='link' to='/'>
 								Homepage
-							</Link>
-						</Tab>
-						<Tab className='tab'>All Accomadations</Tab>
-						<Tab className='tab'>
-							<Link className='link' to='/new-accomadation'>
-								New Accomadation
 							</Link>
 						</Tab>
 					</TabList>
@@ -75,20 +79,20 @@ const ListAccomadation = () => {
 						</div>
 					</div>
 				</div>
-
 				<div className='content'>
-					<TabPanel>Welcom back</TabPanel>
 					<TabPanel>
-						{data?.map((item) => (
+						{data?.data.map((item) => (
 							<AccomadationCard
 								key={item.id}
-								img={item.image}
-								name={item.type}
+								id={item.id}
+								img={item.image_Url}
+								name={item.name}
 								description={item.description}
 							/>
 						))}
 					</TabPanel>
 					<TabPanel></TabPanel>
+					<TabPanel>Welcom back</TabPanel>
 				</div>
 			</Tabs>
 		</div>

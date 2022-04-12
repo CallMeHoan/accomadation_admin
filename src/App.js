@@ -9,7 +9,7 @@ const Homepage = lazy(() => import('./pages/Homepage'))
 const Login = lazy(() => import('./pages/Login'))
 const ListAccomadation = lazy(() => import('./pages/ListAccomadation'))
 const Users = lazy(() => import('./pages/ListUser'))
-const Detail = lazy(() => import('./pages/DetailAccomadation'))
+const Detail = lazy(() => import('./components/DetailCard'))
 
 const queryClient = new QueryClient()
 
@@ -24,7 +24,7 @@ function App() {
 							<Route component={Login} path='/login' exact />
 							<Route component={ListAccomadation} path='/all-accomadations' exact />
 							<Route component={Users} path='/all-users' exact />
-							<Route component={Detail} path='/detail' exact />
+							<Route component={Detail} path='/accomadation/:id' exact />
 						</Switch>
 						<ToastContainer
 							position='top-right'

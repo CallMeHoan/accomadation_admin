@@ -1,1 +1,1 @@
-export const API_KEY = 'http://localhost:3000'
+export const API_KEY = 'http://localhost:8080/api/v1'
