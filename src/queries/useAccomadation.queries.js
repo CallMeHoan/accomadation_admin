@@ -2,14 +2,11 @@ import { useQuery } from 'react-query'
 import { API_KEY } from '../constants/API'
 
 export const useGetAccomadation = () => {
-	return useQuery([
-		['useGetAccomadation'],
-		async () => {
-			const res = await fetch(`http://localhost:3000/accomadations`)
-			const response = res.json()
-			return response
-		},
-	])
+	return useQuery(['useGetAccomadation'], async () => {
+		const res = await fetch(`${API_KEY}/accomadations`)
+		const response = res.json()
+		return response
+	})
 }
 export const usePostAccomadation = () => {
 	return (data) => {

@@ -69,7 +69,7 @@ const ListUser = () => {
 				<div className='content'>
 					<TabPanel>Welcom back</TabPanel>
 					<TabPanel>
-						{mock.map((item) => (
+						{data?.map((item) => (
 							<UserCard
 								name={item.name}
 								phone={item.phone}

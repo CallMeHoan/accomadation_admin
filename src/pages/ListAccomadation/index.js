@@ -40,7 +40,7 @@ const mock = [
 ]
 
 const ListAccomadation = () => {
-	const { data, status } = useGetAccomadation()
+	const { data } = useGetAccomadation()
 	console.log(data)
 	return (
 		<div className='ListAccomadation'>
@@ -79,8 +79,13 @@ const ListAccomadation = () => {
 				<div className='content'>
 					<TabPanel>Welcom back</TabPanel>
 					<TabPanel>
-						{mock.map((item) => (
-							<AccomadationCard img={item.image} name={item.type} description={item.description} />
+						{data?.map((item) => (
+							<AccomadationCard
+								key={item.id}
+								img={item.image}
+								name={item.type}
+								description={item.description}
+							/>
 						))}
 					</TabPanel>
 					<TabPanel></TabPanel>
