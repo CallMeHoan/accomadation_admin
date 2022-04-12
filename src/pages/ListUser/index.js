@@ -7,9 +7,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import { UserCard } from '../../components/UserCard'
 import { Link } from 'react-router-dom'
-import Hotel1 from '../../assets/hotels/hotel_room.png'
-import Hotel2 from '../../assets/hotels/hotel_room_2.png'
-import Hotel3 from '../../assets/hotels/hotel_room_3.png'
+import { useGetUsers } from '../../queries/useUser.queries'
 const mock = [
 	{
 		id: 1,
@@ -37,6 +35,8 @@ const mock = [
 	},
 ]
 const ListUser = () => {
+	const { data } = useGetUsers()
+	console.log(data)
 	return (
 		<div className='ListAccomadation'>
 			<Tabs className='tab__container'>

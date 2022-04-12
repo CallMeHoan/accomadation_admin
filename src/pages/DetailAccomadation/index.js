@@ -1,49 +1,35 @@
 import React from 'react'
-import './styles.css'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import { AccomadationCard } from '../../components/AccomadationCard'
+import { DetailCard } from '../../components/DetailCard'
 import { Link } from 'react-router-dom'
-import { useGetAccomadation } from '../../queries/useAccomadation.queries'
-import Hotel1 from '../../assets/hotels/hotel_room.png'
-import Hotel2 from '../../assets/hotels/hotel_room_2.png'
-import Hotel3 from '../../assets/hotels/hotel_room_3.png'
+import './styles.css'
 
 const mock = [
 	{
-		id: 1,
-		type: 'Classic Room',
-		image: Hotel1,
-		property: '25m / No specific view / 2 Adults',
+		image: 'image',
+		type: 'Classic Room - Sierra Nevada',
+		toilets: '2',
+		wifi: 'Co Nha',
+		floor: '2 lau',
+		people: '10 dua van oke',
+		area: '100m2',
+		price: '2 trieu',
+		available: 'Co San',
+		rooms: '10',
 		description:
 			'The dark wood panelling and elegant furnishings evoke the charm of a secluded Sierra Nevada getaway.',
-	},
-	{
-		id: 2,
-		type: 'Superior Room',
-		image: Hotel2,
-		property: '25m / Partial Mountain View / 2 Adults, 1 Children ',
-		description:
-			'The superior double rooms offer a cosy, rustic atmosphere, and are the ultimate setting to escape from the stresses of daily life.',
-	},
-	{
-		id: 3,
-		type: 'Deluxe Room',
-		image: Hotel3,
-		property: '28 - 36m/ Mountain View/ 2 Adults ',
-		description:
-			'Each impressive deluxe room is inspired by a different mountain region of the world, from the Swiss Alps to Mount Kilimanjaro.',
+		title:
+			'A deeply alluring space that invites you to truly switch off from the realities of everyday life',
 	},
 ]
 
-const ListAccomadation = () => {
-	const { data, status } = useGetAccomadation()
-	console.log(data)
+const DetailAccomdation = () => {
 	return (
-		<div className='ListAccomadation'>
+		<div className='DetailAccomadation'>
 			<Tabs className='tab__container'>
 				<div className='tabs'>
 					<span className='brand'>MoviLa</span>
@@ -79,9 +65,20 @@ const ListAccomadation = () => {
 				<div className='content'>
 					<TabPanel>Welcom back</TabPanel>
 					<TabPanel>
-						{mock.map((item) => (
-							<AccomadationCard img={item.image} name={item.type} description={item.description} />
-						))}
+						<DetailCard
+							image={mock.image}
+							type={mock.type}
+							toilets={mock.toilets}
+							wifi={mock.wifi}
+							floor={mock.floor}
+							people={mock.people}
+							area={mock.area}
+							price={mock.price}
+							available={mock.available}
+							rooms={mock.rooms}
+							address={mock.address}
+							description={mock.description}
+						/>
 					</TabPanel>
 					<TabPanel></TabPanel>
 				</div>
@@ -89,4 +86,5 @@ const ListAccomadation = () => {
 		</div>
 	)
 }
-export default ListAccomadation
+
+export default DetailAccomdation
