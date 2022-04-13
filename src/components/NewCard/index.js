@@ -96,6 +96,7 @@ const NewAccomadattion = () => {
 						<div
 							className='book_btn'
 							onClick={() => {
+								console.log(info)
 								onPostAccomadation(info)
 							}}
 						>

@@ -10,7 +10,6 @@ const Editpage = () => {
 	const id = params.id
 	const { data } = useGetAccomadationById(id)
 	console.log(data)
-	const [user, setUser] = useState({})
 
 	return (
 		<div className='edit__container'>

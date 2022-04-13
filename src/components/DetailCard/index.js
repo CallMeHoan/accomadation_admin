@@ -12,9 +12,9 @@ const DetailAccomdation = () => {
 	return (
 		<div className='DetailAccomadation'>
 			<section className='info_container'>
-				<div className='info_name'>{data?.name}</div>
+				<div className='info_name'>{data?.data.name}</div>
 				<div className='info_pictiure'>
-					<img src={data?.image_Url} alt='image' />
+					<img src={data?.data.image_Url} alt='image' />
 				</div>
 				<div className='info_title'>{data?.title}</div>
 				<div className='info_description'>{data?.description}</div>
@@ -25,11 +25,11 @@ const DetailAccomdation = () => {
 							<div className='detail'>
 								Wifi :{data?.wifi ? <span>Available</span> : <span>Unavailable</span>}
 							</div>
-							<div className='detail'>Floor :{data?.floor}</div>
-							<div className='detail'>People :{data?.people}</div>
-							<div className='detail'>Area :{data?.area}</div>
-							<div className='detail'>Price :{data?.price}</div>
-							<div className='detail'>Available :{data?.available}</div>
+							<div className='detail'>Floor :{data?.data.floor}</div>
+							<div className='detail'>People :{data?.data.people}</div>
+							<div className='detail'>Area :{data?.data.area}</div>
+							<div className='detail'>Price :{data?.data.price}</div>
+							<div className='detail'>Available :{data?.data.available}</div>
 						</div>
 					</div>
 					<div className='book_now_container'>
@@ -47,16 +47,16 @@ const DetailAccomdation = () => {
 					<div className='Gallary_picture'>
 						<div className='pictures'>
 							<div className='picture_container'>
-								<img src={data?.image_Url}></img>
+								<img src={data?.data.image_Url}></img>
 							</div>
 							<div className='picture_container'>
-								<img src={data?.image_Url}></img>
+								<img src={data?.data.image_Url}></img>
 							</div>
 							<div className='picture_container'>
-								<img src={data?.image_Url}></img>
+								<img src={data?.data.image_Url}></img>
 							</div>
 							<div className='picture_container'>
-								<img src={data?.image_Url}></img>
+								<img src={data?.data.image_Url}></img>
 							</div>
 						</div>
 					</div>
