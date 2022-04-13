@@ -1,28 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import './styles.css'
-import image1 from '../../assets/hotels/hotel_room.png'
 import { Link } from 'react-router-dom'
 import { useGetAccomadationById } from '../../queries/useAccomadation.queries'
-
-const mock = [
-	{
-		image: image1,
-		type: 'Classic Room - Sierra Nevada',
-		toilets: '2',
-		wifi: 'Co Nha',
-		floor: '2 lau',
-		people: '10 dua van oke',
-		area: '100m2',
-		price: '2 trieu',
-		available: 'Co San',
-		rooms: '10',
-		description:
-			'The dark wood panelling and elegant furnishings evoke the charm of a secluded Sierra Nevada getaway.',
-		title:
-			'A deeply alluring space that invites you to truly switch off from the realities of everyday life',
-	},
-]
 
 const DetailAccomdation = () => {
 	const params = useParams()
@@ -32,24 +12,24 @@ const DetailAccomdation = () => {
 	return (
 		<div className='DetailAccomadation'>
 			<section className='info_container'>
-				<div className='info_name'>{data?.data.type}</div>
+				<div className='info_name'>{data?.name}</div>
 				<div className='info_pictiure'>
-					<img src={data?.data.image_Url} alt='image' />
+					<img src={data?.image_Url} alt='image' />
 				</div>
-				<div className='info_title'>{data?.data.title}</div>
-				<div className='info_description'>{data?.data.description}</div>
+				<div className='info_title'>{data?.title}</div>
+				<div className='info_description'>{data?.description}</div>
 				<div className='info_details_book'>
 					<div className='info_details'>
 						<div className='all_details'>
-							<div className='detail'>Toilets :{data?.data.toilets}</div>
+							<div className='detail'>Toilets :{data?.toilets}</div>
 							<div className='detail'>
-								Wifi :{data?.data.wifi ? <span>Available</span> : <span>Unavailable</span>}
+								Wifi :{data?.wifi ? <span>Available</span> : <span>Unavailable</span>}
 							</div>
-							<div className='detail'>Floor :{data?.data.floor}</div>
-							<div className='detail'>People :{data?.data.people}</div>
-							<div className='detail'>Area :{data?.data.area}</div>
-							<div className='detail'>Price :{data?.data.price}</div>
-							<div className='detail'>Available :{data?.data.available}</div>
+							<div className='detail'>Floor :{data?.floor}</div>
+							<div className='detail'>People :{data?.people}</div>
+							<div className='detail'>Area :{data?.area}</div>
+							<div className='detail'>Price :{data?.price}</div>
+							<div className='detail'>Available :{data?.available}</div>
 						</div>
 					</div>
 					<div className='book_now_container'>
@@ -67,16 +47,16 @@ const DetailAccomdation = () => {
 					<div className='Gallary_picture'>
 						<div className='pictures'>
 							<div className='picture_container'>
-								<img src={mock[0].image}></img>
+								<img src={data?.image_Url}></img>
 							</div>
 							<div className='picture_container'>
-								<img src={mock[0].image}></img>
+								<img src={data?.image_Url}></img>
 							</div>
 							<div className='picture_container'>
-								<img src={mock[0].image}></img>
+								<img src={data?.image_Url}></img>
 							</div>
 							<div className='picture_container'>
-								<img src={mock[0].image}></img>
+								<img src={data?.image_Url}></img>
 							</div>
 						</div>
 					</div>

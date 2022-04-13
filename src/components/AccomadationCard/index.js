@@ -21,11 +21,15 @@ export const AccomadationCard = (props) => {
 							Details
 						</Link>
 					</div>
-					<div className='btn'>Update</div>
+					<div className='btn'>
+						<Link className='link' to={`/edit/${props.id}`}>
+							Update
+						</Link>
+					</div>
 					<div
 						onClick={() => {
 							onDeleteAccomadation()
-							// window.location.reload()
+							window.location.reload()
 						}}
 						className='btn'
 					>

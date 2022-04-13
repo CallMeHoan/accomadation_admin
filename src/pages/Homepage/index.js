@@ -50,7 +50,7 @@ const Homepage = () => {
 							<Link className='link' to='/all-accomadations'>
 								<span className='item'>All Accomadations</span>
 							</Link>
-							<Link className='link' to='/new-accomadation'>
+							<Link className='link' to='/new'>
 								<span className='item'>Add Accomadations</span>
 							</Link>
 						</div>
