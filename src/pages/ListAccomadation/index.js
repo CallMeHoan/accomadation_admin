@@ -75,7 +75,7 @@ const ListAccomadation = () => {
 				</div>
 				<div className='content'>
 					<TabPanel>
-						{data?.map((item) => (
+						{data?.data.map((item) => (
 							<AccomadationCard
 								key={item.id}
 								id={item.id}
