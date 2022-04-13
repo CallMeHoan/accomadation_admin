@@ -10,7 +10,7 @@ const Login = lazy(() => import('./pages/Login'))
 const ListAccomadation = lazy(() => import('./pages/ListAccomadation'))
 const Users = lazy(() => import('./pages/ListUser'))
 const Detail = lazy(() => import('./components/DetailCard'))
-const Edit = lazy(() => import('./components/EditCard'))
+const EditPage = lazy(() => import('./pages/EditPage'))
 const New = lazy(() => import('./components/NewCard'))
 
 const queryClient = new QueryClient()
@@ -27,7 +27,7 @@ function App() {
 							<Route component={ListAccomadation} path='/all-accomadations' exact />
 							<Route component={Users} path='/all-users' exact />
 							<Route component={Detail} path='/accomadation/:id' exact />
-							<Route component={Edit} path='/edit/:id' exact />
+							<Route component={EditPage} path='/edit/:id' exact />
 							<Route component={New} path='/new' exact />
 						</Switch>
 						<ToastContainer

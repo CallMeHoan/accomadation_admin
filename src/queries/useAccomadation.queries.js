@@ -11,13 +11,9 @@ export const useGetAccomadation = () => {
 
 export const useGetAccomadationById = (id) => {
 	return useQuery(['useGetAccomadationById'], async () => {
-		// const res = await fetch(`${API_KEY}/accommodations/${id}`)
-		// const response = res.json()
-		// return response
-		return fetch(`${API_KEY}/accommodations/${id}`)
-			.then((res) => res.json())
-			.then((result) => result)
-			.catch((err) => console.log(err))
+		const res = await fetch(`${API_KEY}/accommodations/${id}`)
+		const response = res.json()
+		return response
 	})
 }
 
