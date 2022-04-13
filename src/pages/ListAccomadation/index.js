@@ -42,12 +42,6 @@ const mock = [
 const ListAccomadation = () => {
 	const { data } = useGetAccomadation()
 	console.log(data)
-	// var accomadations = ''
-	// console.log(accomadations)
-	// if (data !== undefined) {
-	// 	accomadations = data.data
-	// 	console.log(accomadations)
-	// }
 	return (
 		<div className='ListAccomadation'>
 			<Tabs className='tab__container'>
@@ -81,7 +75,7 @@ const ListAccomadation = () => {
 				</div>
 				<div className='content'>
 					<TabPanel>
-						{data?.data.map((item) => (
+						{data?.map((item) => (
 							<AccomadationCard
 								key={item.id}
 								id={item.id}
